@@ -1,9 +1,9 @@
 # Api Documentation
 
-## Endpoint
+## Fruits Endpoint
 
-- base url : `https://not-defined.com/`
-- base image url : `https://not-defined.com/static/images/`
+- base url : `https://<cloudrun_service_name>.a.run.app/`
+- base image url : `https://storage.googleapis.com/<bucket_name>/`
 
 ### Fruits Of The Day
 
@@ -99,6 +99,31 @@
       "Make sure the tip of the fruit is either pale white or yellowish brown. Avoid oranges with dark-looking tip",
       "Make sure the skin looks clear or have minimal blemishes"
     ]
+  }
+}
+```
+
+## Auth Endpoint
+
+- base url : `https://<cloudrun_service_name>.a.run.app/`
+- base image url : `https://storage.googleapis.com/<bucket_name>/`
+
+### Register
+
+- Path : `/signup`
+- Method : `POST`
+- Response :
+
+```json
+ini perlu diganti
+{
+  "error": false,
+  "email": "someone@mail.com",
+  "data": {
+    "fruits_id": "f0001",
+    "name": "apple",
+    "image": "apple.png",
+    "short_desc": "lorem ipsum dolor sit amet..."
   }
 }
 ```
