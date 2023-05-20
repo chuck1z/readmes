@@ -1,110 +1,120 @@
 # User API
 
 ### POST /register
-Mendaftarkan user baru ke dalam aplikasi. 
+Registers a new user in the application.
 
-Request body: 
+Request body:
 ```json
-{ 
-  "email": "emailuser@contoh.com", 
-  "password": "passworduser", 
-  "phone": "081234567890" 
-} 
+{
+  "email": "useremail@example.com",
+  "password": "userpassword",
+  "phone": "081234567890"
+}
 ```
-Response: 
 
-201 Created jika user berhasil didaftarkan. 
+Response:
+
+201 Created if the user is successfully registered.
 
 Response body:
 ```json
 {
   "message": "User registered",
-  "uid": "uiduser"
+  "uid": "useruid"
 }
 ```
 
-400 Bad Request jika terjadi kesalahan pada input data. 
-
-Response body: 
-```json
-{
-  "message": "error message"
-} 
-```
-
-### POST /login
-Melakukan login user ke dalam aplikasi. 
-
-Request body:
-```json
-{
-  "email": "emailuser@contoh.com",
-  "password": "passworduser"
-}
-```
-Response:
-
-200 OK jika login berhasil.
+400 Bad Request if there is an error in the input data.
 
 Response body:
 ```json
 {
-  "uid": "uiduser",
-  "email": "emailuser@contoh.com"
+  "message": "error message"
 }
 ```
+------
+### POST /login
+Logs a user into the application.
 
-500 Internal Server Error jika terjadi kesalahan pada server.
-
-### GET /user/{uid}
-Mengambil informasi user berdasarkan uid.
-
-Request parameter:
-
-uid: uid user
-Response:
-
-200 OK jika data user ditemukan. Response body:
-
-```json
-{
-  "email": "emailuser@contoh.com",
-  "phone": "081234567890"
-}
-```
-404 Not Found jika user tidak ditemukan.
-
-500 Internal Server Error jika terjadi kesalahan pada server.
-
-### POST /logout
-Melakukan logout user dari aplikasi.
-
-Response:
-
-200 OK jika logout berhasil.
-
-400 Bad Request jika terjadi kesalahan saat melakukan logout.
-
-### PUT /edit-profile/{uid}
-Mengubah informasi profil user berdasarkan uid.
-
-Request parameter:
-
-uid: uid user
 Request body:
 ```json
 {
-  "email": "emailuserbaru@contoh.com",
-  "password": "passworduserbaru",
-  "phone": "081234567891",
-  "currentEmail": "emailuserlama@contoh.com",
-  "currentPassword": "passworduserlama"
+  "email": "useremail@example.com",
+  "password": "userpassword"
 }
 ```
+
 Response:
 
-200 OK jika profil berhasil diubah.
+200 OK if the login is successful.
 
-403 Forbidden jika user tidak memiliki akses untuk mengubah profil.
+Response body:
+```json
+{
+  "uid": "useruid",
+  "email": "useremail@example.com"
+}
+```
 
-500 Internal Server Error jika terjadi kesalahan pada server.
+500 Internal Server Error if there is a server error.
+
+------
+### GET /user/{uid}
+Retrieves user information based on the uid.
+
+Request parameter:
+
+uid: user uid
+
+Response:
+
+200 OK if the user data is found.
+
+Response body:
+```json
+{
+  "email": "useremail@example.com",
+  "phone": "081234567890"
+}
+```
+
+404 Not Found if the user is not found.
+
+500 Internal Server Error if there is a server error.
+
+------
+### POST /logout
+Logs out a user from the application.
+
+Response:
+
+200 OK if the logout is successful.
+
+400 Bad Request if there is an error during the logout process.
+
+------
+### PUT /edit-profile/{uid}
+Updates user profile information based on the uid.
+
+Request parameter:
+
+uid: user uid
+
+Request body:
+```json
+{
+  "email": "newuseremail@example.com",
+  "password": "newuserpassword",
+  "phone": "081234567891",
+  "currentEmail": "olduseremail@example.com",
+  "currentPassword": "olduserpassword"
+}
+```
+
+Response:
+
+200 OK if the profile is successfully updated.
+
+403 Forbidden if the user does not have access to update the profile.
+
+500 Internal Server Error if there is a server error.
