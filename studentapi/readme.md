@@ -1,37 +1,5 @@
 # Instalasi
 
-Clone repository ini dengan perintah berikut:.\
-`git clone https://github.com/JavierZam/apiuser`
-
-Masuk ke dalam direktori repository dengan perintah:.\
-`cd apiuser`
-
-Jalankan perintah berikut untuk menginstall dependency:.\
-`npm install`
-
-Buat file .env di root directory dan isi dengan variabel firebase sebagai berikut:<br>
-<br>
-FIREBASE_API_KEY=your-api-key<br>
-FIREBASE_AUTH_DOMAIN=your-auth-domain<br>
-FIREBASE_PROJECT_ID=your-project-id<br>
-FIREBASE_STORAGE_BUCKET=your-storage-bucket<br>
-FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id<br>
-FIREBASE_APP_ID=your-app-id
-
-Pastikan untuk mengganti your-api-key, your-auth-domain, your-project-id, your-storage-bucket, 
-your-messaging-sender-id, dan your-app-id dengan nilai yang sesuai dari akun Firebase Anda.
-
-# Endpoints
-
-| Method | Endpoint           | Handler                                  |
-| ------ | ----------------- | ---------------------------------------- |
-| POST   | /register          | registerUser()                           |
-| POST   | /login             | loginUser()                              |
-| GET    | /user/{uid}        | getUserData()                            |
-| POST   | /logout            | logoutUser()                             |
-| PUT    | /edit-profile/{uid}| editProfile()                            |
-
-
 ### POST /register
 Mendaftarkan user baru ke dalam aplikasi. 
 
