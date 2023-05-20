@@ -1,4 +1,4 @@
-# Instalasi
+# User API
 
 ### POST /register
 Mendaftarkan user baru ke dalam aplikasi. 
